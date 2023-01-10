@@ -1,0 +1,33 @@
+def outer_function(x):
+    """
+    This is the outer function.
+    
+    Parameters:
+    x (int): A number.
+    
+    Returns:
+    function: A function that adds x to its argument.
+    """
+    
+    def inner_function(y):
+        """
+        This is the inner function.
+        
+        Parameters:
+        y (int): A number.
+        
+        Returns:
+        int: The sum of x and y.
+        """
+        return x + y
+    
+    # Return the inner function
+    return inner_function
+
+# Call the outer function to create a closure
+closure = outer_function(10)
+
+# Call the closure
+result = closure(5)
+print(result)  # prints 15
+
